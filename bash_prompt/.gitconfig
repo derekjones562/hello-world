@@ -1,0 +1,67 @@
+[push]
+    default = current
+[diff]
+    renames = copies
+    mnemonicprefix = true
+    default = current
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+    ui = auto
+[color "branch"]
+    current = green bold
+    local = green
+    remote = red bold
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red
+[color "sh"]
+    branch = yellow
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    dfw = diff --color-words
+    lg = log -p
+    dfs = diff --staged
+    cherry-pick = cherry-pick -no-commit
+
+    # pull/push
+    pp = "!git pull && git push"
+
+    # Github Pull Request
+	prurl = "!f() { branch=$(git rev-parse --abbrev-ref HEAD); \
+		repo=$(git remote -v | grep -m 1 \"(push)\" | sed -e 's/.*github.com:\\(.*\\) .*/\\1/g' | sed -e 's/\\.git//g' ); \
+		url=https://github.com/$repo/pull/new/$branch; echo $url; \
+		open $url > /dev/null 2>&1; \
+	}; f"
+	pr = "!f() { branch=$(git rev-parse --abbrev-ref HEAD); \
+		git prurl; echo ''; \
+		git pull && git push && git co development; \
+		git br -d $branch; \
+	}; f"
+
+	# create branch, push to remote, and track it
+	cob = "!f() { git pull && git co -b $1 && branch=$(git rev-parse --abbrev-ref HEAD) && git push --set-upstream origin $branch && git prurl; }; f"
+
+    # nice log output
+    lg = log --graph --pretty=oneline --abbrev-commit --decorate
+
+[grep]
+    lineNumber = true
+[user]
+	email = derek.jones562@gmail.com
+	name = Derek
+[user]
+[credential]
+	helper = cache --timeout=2800
