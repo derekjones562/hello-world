@@ -1,11 +1,6 @@
-alias clover="cd /Users/djones/dev/src/clover_graphs/" 
 alias salt="ssh ec2-user@salt"
 alias home="cd ~"
 alias derekjones562="cd /Users/djones/dev/src/derekjones562/"
-alias thanos="cd /Users/djones/dev/src/DobaTech/thanos/ && workon thanos"
-alias crux="cd /Users/djones/dev/src/DobaTech/thanos/ && workon crux"
-alias crux-ops="cd /Users/djones/dev/src/CruxConnect/crux-ops/ && workon crux-ops"
-alias black="cd /Users/djones/dev/src/blackwidow/"
 alias xcode="open -a /Applications/Xcode.app"
 alias pycharm="open /usr/local/bin/charm"
 alias homeserver="ssh derek@24.10.211.19"
@@ -16,14 +11,6 @@ alias ls="ls -a"
 #export PATH="/Users/djones/.venvburrito/bin:/usr/local/bin:$PATH"
 PYTHONDONTWRITEBYTECODE=True
 
-if [ -e ~/.timein.sh ] ; then {
-	alias clockin="sh ~/.timein.sh"
-}
-fi
-if [ -e ~/.timeout.sh ] ; then {
-	alias clockout="sh ~/.timeout.sh"
-}
-fi
 export GREP_OPTIONS='--color=auto' 
 
 #[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion 
@@ -83,4 +70,4 @@ GIT_PROMPT_END_ROOT=" \n${WHITE} # ${WHITE}"
 GIT_PROMPT_BRANCH="${GREEN}"
 GIT_PROMPT_STASHED="${MAGENTA}⚑ "
 
-source ~/.bash-git-prompt/gitprompt.sh
+source ~/.bash_prompt/gitprompt.sh
