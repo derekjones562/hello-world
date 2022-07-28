@@ -16,8 +16,9 @@ function git_prompt_dir() {
       SOURCE="$(readlink "$SOURCE")"
       [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
     done
-    __GIT_PROMPT_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-  fi
+	__GIT_PROMPT_DIR="$( cd -P "$(pwd)/dev/hello-world/bash_prompt/" && pwd)"
+	fi 
+
 }
 
 function echoc() {
