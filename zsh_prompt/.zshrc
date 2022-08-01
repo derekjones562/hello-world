@@ -11,3 +11,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# make sure ssh agent is running; https://help.github.com/articles/generating-ssh-keys/#step-3-add-your-key-to-the-ssh-agent
+eval $(ssh-agent -s)
