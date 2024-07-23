@@ -6,7 +6,7 @@ cp ./zshrc ~/
 cp ./p10k.zsh ~/
 read -p "GOPRIVATE domain: " goPrivate
 echo GOPRIVATE="$goPrivate" >> ~/.zshrc
-echo GOPATH="$GOPATH:/usr/local/opt/go/libexec/bin/go" >> ~/.zshrc
+echo GOPATH="$GOPATH:/usr/local/opt/go/libexec/bin/go:`go env GOPATH`/bin" >> ~/.zshrc
 echo GO111MODULE=on >> ~/.zshrc
 echo KUBECONFIG=~/.kube/config >> ~/.zshrc
 
